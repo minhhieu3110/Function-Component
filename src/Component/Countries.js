@@ -16,7 +16,7 @@ export default function Countries() {
         });
     }, []);
     const filterCountries = countries.filter((country) => {
-        const searchCountry = country.name.common.includes(countriesSearch);
+        const searchCountry = country.name.common.toLowerCase().includes(countriesSearch);
         const areaOfCountries = (areaRange.from === "" || country.area >= areaRange.from) && (areaRange.to === "" || country.area <= areaRange.to);
         const populationOfCountries = (populationRange.from === "" || country.population >= populationRange.from) && (populationRange.to === "" || country.population <= populationRange.to);
         return searchCountry && areaOfCountries && populationOfCountries;

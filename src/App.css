@@ -2,3 +2,14 @@ table,tr,th,td{
   border: 1px solid black;
   text-align: center;
 }
+nav ul{
+  display: flex;
+  list-style-type: none;
+  width: 95%;
+  justify-content: flex-end;
+  gap: 10px;
+  text-decoration: none;
+}
+li > a{
+  text-decoration: none;
+}

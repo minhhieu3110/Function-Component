@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-export default function  FComponent(){
+export default function  Product(){
     let [arrProduct, setArrProduct] = useState([
         {id: 1, name: "Bánh", quantity: 100, price: 3600},
         {id: 2, name: "Kẹo", quantity: 200, price: 2000},
