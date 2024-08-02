@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {useNavigate} from "react-router";
 
 export default function  Product(){
     let [arrProduct, setArrProduct] = useState([
@@ -6,6 +7,7 @@ export default function  Product(){
         {id: 2, name: "Kẹo", quantity: 200, price: 2000},
     ])
     let [newArrProduct, setNewArrProduct] = useState({id:'', name:'', quantity:'', price:''})
+    const navigate = useNavigate();
     const change =(e)=>{
         const {name,value} = e.target;
         setNewArrProduct((newArrPro) =>({
@@ -20,6 +22,9 @@ export default function  Product(){
     }
     return(
         <>
+            <button onClick={()=>{
+                navigate('/')
+            }}>Home</button>
             <h2>Danh sách sản phẩm</h2>
             <input name = 'id' value={newArrProduct.id} onChange={change} placeholder={'Id'}/>
             <input name = 'name' value={newArrProduct.name} onChange={change} placeholder={'Name'}/>

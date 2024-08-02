@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import {useNavigate} from "react-router";
 
 export default function Countries() {
     const [countries, setCountries] = useState([]);
@@ -8,7 +9,7 @@ export default function Countries() {
     const [populationRange, setPopulationRange] = useState({ from: "", to: "" });
     const [option, setOption] = useState("");
     const [dataOption, setDataOption] = useState([]);
-    
+    const navigate = useNavigate();
     useEffect(() => {
         axios.get("https://restcountries.com/v3.1/all").then((response) => {
             setCountries(response.data);
@@ -28,6 +29,7 @@ export default function Countries() {
     
     return (
         <>
+            <button onClick={()=>navigate('/')}>Home</button>
             <h2>Countries list</h2>
             <input
                 onChange={(eName) => {

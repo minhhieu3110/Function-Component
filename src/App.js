@@ -1,25 +1,26 @@
 import './App.css';
-import {Routes, Route, Link} from 'react-router-dom';
+import {Route, Routes} from "react-router-dom";
 import Product from "./Component/Product";
 import Countries from "./Component/Countries";
-import Students from "./Component/Student";
+import Student from "./Component/Student";
+import Home from "./Component/Home";
+import Login from "./Form/Login";
+import Register from "./Form/Register";
 
 function App() {
   return (
-    <>
-        <nav>
-            <ul>
-                <li><Link to="/product">Product</Link></li>
-                <li><Link to="/countries">Countries</Link></li>
-                <li><Link to="/students">Students</Link></li>
-            </ul>
-        </nav>
-        <Routes>
-            <Route path={'/product'} element={<Product/>}/>
-            <Route path={'/countries'} element={<Countries/>}/>
-            <Route path={'/students'} element={<Students/>}/>
-        </Routes>
-    </>
+      <>
+          
+          <Routes>
+              <Route path={'/login'} element={<Login/>}/>
+              <Route path={'/register'} element={<Register/>}/>
+              <Route path={'/'} element={<Home/>}>
+                  <Route path={'/products'} element={<Product/>}/>
+                  <Route path={'/countries'} element={<Countries/>}/>
+                  <Route path={'/students'} element={<Student/>}/>
+              </Route>
+          </Routes>
+      </>
   );
 }
 
